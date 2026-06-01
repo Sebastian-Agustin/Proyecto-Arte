@@ -1,3 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/*
+Reset y base -Elimina estilos por defecto del navegador
+Box-sizing border-box hace que el padding no agrande el elemento
+*/
+
+body{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1A1A1A;
+}
+/*
+Aca estoy declarando los colores, estilos y tamaños de fuente que voy a usar en el proyecto
+*/
+
+
+/* 
+Line-height> Espacio entre linea de texto para una mejor lectura
+*/
+:root {
+    --color-fondo: #F5F5F0;
+    --color-texto: #1A1A1A;
+    --color-acento: #C9A96E;
+    --fuente-titulo: 'Playfair Display', serif;
+    --fuente-cuerpo: 'Inter', sans-serif;
+}
+/*
+Root = variables so as not to repeat  colours and fonts
+They are also declared here to be able to modify in the future all the colors or elements of the root
+Root is a pseudoclass but does not react to user interaction, but points to the root element of html
+puede guardar variables y utilizarse en cualquier linea de la hoja de css
+*/
+
+
 .hidden{
     display: none;
 }
+
