@@ -197,7 +197,10 @@ body.dark {
     background-color: #0F0F0F;
     color: #F5F5F0;
 }
-
+body.dark aside img{
+    filter: brightness(0.85);
+    border: 1px solid #333;
+}
 body.dark .section-about p,
 body.dark .section-team p {
     color: #ccc;

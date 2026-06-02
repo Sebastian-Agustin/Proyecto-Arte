@@ -7,9 +7,30 @@ export const register = ()=>{
     const inputPass = document.getElementById("input-password")
     const inputSumbit = document.getElementById("input-sumbit")
     
-    botonLoging.addEventListener("click",()=>{
-        formToogle.classList.toggle("hidden")  
-    })
-
-
+formToogle.addEventListener("submit", (event)=>{
+    event.preventDefault()
+    //I bring out the default event of the submit
+    
+    //validacion de inputs vacios
+    if(!inputName.value || !inputLastName.value || !inputEmail.value || !inputPass.value){
+        console.error("Todos los input deben estar escritos")
+        return
+    }
+    
+    //capturo los valores y los paso a obj
+    const user = {
+        name: inputName.value,
+        LastName: inputLastName.value,
+        email:inputEmail.value,
+        password: inputPass.value
+    }
+    
+    console.log(user)
+    
+    const userString = JSON.stringify(user)//convierto el obj en string
+    
+    localStorage.setItem("usuario", userString)
+    
+    formToogle.reset()  
+})
 }
