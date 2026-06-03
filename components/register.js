@@ -25,12 +25,18 @@ formToogle.addEventListener("submit", (event)=>{
         password: inputPass.value
     }
     
-    console.log(user)
+    //to store something in memory in the localstorage, set item is used, which is key and value.
+    //That's why user, the problem here is if every user who logs in registers, local can't make a difference = PEPE de Juan
+    // because you're always going to use the same key which is "users". Therefore, it would be best to save an array of objects with user names
+    const usuariosGuardados = localStorage.getItem("usuarios")
     
-    const userString = JSON.stringify(user)//convierto el obj en string
+    // Si hay un key usuarios me devuelve un string y se parsea. Sino existe se crea un array nuevo y se pushea el nuevo valor
+    console.log(usuariosGuardados)
+    const arrayUsuarios=  usuariosGuardados? JSON.parse(usuariosGuardados): []
     
-    localStorage.setItem("usuario", userString)
-    
+    arrayUsuarios.push(user)
+    //here I am pusheando the object with the user data
+    localStorage.setItem("usuarios", JSON.stringify(arrayUsuarios))
     formToogle.reset()  
 })
 }
